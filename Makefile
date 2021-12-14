@@ -1,7 +1,6 @@
-RED = \033[31m
 GREEN = \033[32m
 BLUE = \033[34m
-WHITE = \033[39m
+YELLOW = \e[0;33m
 RESET = \033[0m
 
 CC = clang
@@ -13,31 +12,31 @@ INC = -Iincludes/ -Ilibft/ \
 LIBS = -Llibft -lft
 
 SERVER = server
-SRCS_SERVER = ./srcs/server/server.c
+SRCS_SERVER = ./sources/server.c
 OBJS_SERVER = $(SRCS_SERVER:.c=.o)
 
 CLIENT = client
-SRCS_CLIENT = ./srcs/client/client.c
+SRCS_CLIENT = ./sources/client.c
 OBJS_CLIENT = $(SRCS_CLIENT:.c=.o)
 
 all: $(CLIENT) $(SERVER)
-	@echo "$(GREEN)Minitalk ready!"
+	@echo "$(GREEN)Minitalk ready! :)$(RESET)"
 
 .c.o:
 	$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
 
 $(CLIENT): $(OBJS_CLIENT)
-	@echo "Compiling libft ..."
+	@echo "$(YELLOW)Compiling libft...$(RESET)"
 	@$(MAKE) -sC libft
 	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
-	@echo "$(BLUE)Client ready.$(RESET)"
+	@echo "$(BLUE)Client ready!$(RESET)"
 
 $(SERVER): $(OBJS_SERVER)
-	@echo "Minitalk creating libft ..."
+	@echo "$(YELLOW)Compiling libft...$(RESET)"
 	@$(MAKE) -sC libft
 	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
-	@echo "$(BLUE)Server ready.$(RESET)"
+	@echo "$(BLUE)Server ready!$(RESET)"
 
 clean:
 	@$(MAKE) -sC libft clean
