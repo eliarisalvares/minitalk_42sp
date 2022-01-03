@@ -428,8 +428,6 @@ char			**ft_split(char *s, char c);
 
 char			*ft_strmapi(char *s, char (*f)(unsigned int, char));
 
-char			*ft_straddc_first(char c);
-
-char			*ft_straddc(char *str, char c);
+char			*ft_add_char_to_str(char *str, char c);
 
 #endif

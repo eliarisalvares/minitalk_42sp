@@ -20,7 +20,7 @@ SRCS_CLIENT = ./sources/client.c
 OBJS_CLIENT = $(SRCS_CLIENT:.c=.o)
 
 all: $(CLIENT) $(SERVER)
-	@echo "$(GREEN)Minitalk ready! :)$(RESET)"
+	@echo "$(GREEN)Minitalk is ready to run! :)$(RESET)"
 
 .c.o:
 	$(CC) $(CFLAGS) $(INC) -c $< -o $@
@@ -30,13 +30,13 @@ $(CLIENT): $(OBJS_CLIENT)
 	@echo "$(YELLOW)Compiling libft...$(RESET)"
 	@$(MAKE) -sC libft
 	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
-	@echo "$(BLUE)Client ready!$(RESET)"
+	@echo "$(BLUE)Client is ready!$(RESET)"
 
 $(SERVER): $(OBJS_SERVER)
 	@echo "$(YELLOW)Compiling libft...$(RESET)"
 	@$(MAKE) -sC libft
 	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
-	@echo "$(BLUE)Server ready!$(RESET)"
+	@echo "$(BLUE)Server is ready!$(RESET)"
 
 clean:
 	@$(MAKE) -sC libft clean

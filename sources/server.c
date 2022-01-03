@@ -32,7 +32,7 @@ char	*ft_print_message(char *message)
 void	ft_server_user_signal_handler(int sig, siginfo_t *info, void *context)
 {
 	static char	c = 0b11111111;
-	static int	bits = 0;
+	static int	bit_counter = 0;
 	static int	pid = 0;
 	static char	*message = 0;
 
@@ -40,16 +40,16 @@ void	ft_server_user_signal_handler(int sig, siginfo_t *info, void *context)
 	if (info->si_pid)
 		pid = info->si_pid;
 	if (sig == SIGUSR1)
-		c ^= 0b10000000 >> bits;
+		c ^= 0b10000000 >> bit_counter;
 	else if (sig == SIGUSR2)
-		c |= 0b10000000 >> bits;
-	if (++bits == 8)
+		c |= 0b10000000 >> bit_counter;
+	if (++bit_counter == 8)
 	{
 		if (c != '\0')
-			message = ft_straddc(message, c);
+			message = ft_add_char_to_str(message, c);
 		else
 			message = ft_print_message(message);
-		bits = 0;
+		bit_counter = 0;
 		c = 0b11111111;
 	}
 	if (kill(pid, SIGUSR1) == -1)

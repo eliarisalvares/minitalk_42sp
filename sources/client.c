@@ -40,7 +40,7 @@ int	ft_send_message_bit_by_bit(int pid, char *str)
 	static int	bit_counter = -1;
 
 	if (str)
-		message = strdup(str);
+		message = ft_strdup(str);
 	if (!message)
 		ft_client_error_message_and_exit(0);
 	if (pid)
@@ -89,9 +89,12 @@ int	main(int argc, char **argv)
 		ft_putstr("Try: ./client + server PID number + message.\n");
 		exit(EXIT_FAILURE);
 	}
-	signal(SIGUSR1, ft_client_user_signal_handler);
-	signal(SIGUSR2, ft_client_user_signal_handler);
-	ft_send_message_bit_by_bit(atoi(argv[1]), argv[2]);
+	else
+	{
+		signal(SIGUSR1, ft_client_user_signal_handler);
+		signal(SIGUSR2, ft_client_user_signal_handler);
+		ft_send_message_bit_by_bit(atoi(argv[1]), argv[2]);
+	}
 	while (1)
 		pause();
 }

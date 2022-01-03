@@ -12,7 +12,19 @@
 
 #include "libft.h"
 
-char	*ft_straddc(char *str, char c)
+char	*ft_add_first_character(char c)
+{
+	char	*add;
+
+	add = (char *)malloc(sizeof(char) * 2);
+	if (!add)
+		return (NULL);
+	add[0] = c;
+	add[1] = '\0';
+	return (add);
+}
+
+char	*ft_add_char_to_str(char *str, char c)
 {
 	char	*add;
 	int		i;
@@ -20,7 +32,7 @@ char	*ft_straddc(char *str, char c)
 	if (!c)
 		return (NULL);
 	if (!str)
-		return (ft_straddc_first(c));
+		return (ft_add_first_character(c));
 	add = (char *)malloc(sizeof(char) * (ft_strlen(str) + 2));
 	if (!add)
 	{
