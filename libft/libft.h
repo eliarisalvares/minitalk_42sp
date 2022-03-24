@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: elraira- <elraira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 14:02:22 by elraira-          #+#    #+#             */
-/*   Updated: 2021/12/14 17:03:33 by coder            ###   ########.fr       */
+/*   Updated: 2022/03/24 14:40:27 by elraira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -200,6 +200,14 @@ char			*ft_strdup(char *s1);
  * @return int the converted value
  */
 int				ft_atoi(const char *str);
+
+/**
+ * @brief converts string to long
+ *
+ * @param str string to operate on
+ * @return long converted long
+ */
+long long int	ft_atol(const char *str);
 
 //memory manipulation
 
