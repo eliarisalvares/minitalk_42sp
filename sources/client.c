@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: elraira- <elraira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 14:02:22 by elraira-          #+#    #+#             */
-/*   Updated: 2021/12/14 17:03:33 by coder            ###   ########.fr       */
+/*   Updated: 2022/04/03 09:16:41 by elraira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	ft_client_user_signal_handler(int sig)
 	}
 	if (end)
 	{
-		ft_putstr("Message successfully sent to server!\n");
+		ft_putstr("Message was successfully sent to server!\n");
 		exit(EXIT_SUCCESS);
 	}
 }
